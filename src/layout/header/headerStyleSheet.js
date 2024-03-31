@@ -7,7 +7,6 @@ export const headerStyle = StyleSheet.create({
         justifyContent: "space-between",
         alignItems: "center", // Change this line
         width: "100%",
-        position: "absolute", // Use absolute positioning
         top: 20, // Position at the top
         left: 0, // Align to the left
         padding: 10,

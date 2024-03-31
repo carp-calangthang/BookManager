@@ -1,23 +1,25 @@
-
+import React from "react";
 import { Entypo} from '@expo/vector-icons';
-import { StatusBar } from "expo-status-bar";
-import React, { useState, useEffect } from "react";
-import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity, Image } from "react-native";
+import { useNavigation } from '@react-navigation/native';
+import { View, TouchableOpacity, Image } from "react-native";
 
-import { headerStyle } from './headerStyleSheet'; 
+import { headerStyle } from './headerStyleSheet';
+import LoginScreen from "../../login/loginScreen";
 
-export default function Header() {
-    return (
+export default function Header () {
+        const navigation = useNavigation();
+        return (
         <View style={headerStyle.header}>
-            <TouchableOpacity 
-                style={headerStyle.button}
-                onPress={() => {
-                    console.log("Menu button pressed");
-                }}
+            <TouchableOpacity
+                onPress={() => navigation.openDrawer()}
             >
                 <Entypo name="menu" size={50} color="black" />
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity
+                onPress={() => {
+                    console.log('Image button pressed');
+                }}
+            >
                 <Image 
                     style={headerStyle.image} 
                     source={require("../../../public/images/logo.jpg")}
@@ -25,4 +27,5 @@ export default function Header() {
             </TouchableOpacity>           
         </View>
     );
+    
 };
