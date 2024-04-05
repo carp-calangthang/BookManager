@@ -1,22 +1,19 @@
 import { StyleSheet } from 'react-native';
 
-export const loginStylesheet = StyleSheet.create({
+export const RegisterStylesheet = StyleSheet.create({
     container: {
-        flex: 1,
-        justifyContent: 'space-around',
         alignItems: 'center',
+        justifyContent: 'space-around',
     },
 
     base: {
         marginTop: 100,
-        
     },
 
     logo: {
         width: 400,
         height: 400,
         marginTop: -20,
-        
     },
 
     LoginTitle: {
@@ -42,10 +39,9 @@ export const loginStylesheet = StyleSheet.create({
 
     GoogleLogin: {
         padding: 15,
+        alignItems: 'center',
         borderRadius: 5,
-        marginBottom: 20,   
-        flexDirection: 'row',
-        justifyContent: 'center',  
+        marginBottom: 20,        
     },
 
     GoogleLoginBtn: {
@@ -61,18 +57,7 @@ export const loginStylesheet = StyleSheet.create({
         marginLeft: 10,
     },
 
-    Reg: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        marginTop: 100,
-    },
-
-    RegTitle: {
-        fontSize: 18,
-        fontFamily: 'Roboto',
-    },
-
-    CreateButton: {
+    SignButton: {
         marginLeft: 5,
     },
 
@@ -111,26 +96,15 @@ export const loginStylesheet = StyleSheet.create({
         paddingLeft: 20,
     },
 
-    Forgot: {
+    Sign: {
         flexDirection: 'row',
         justifyContent: 'center',
         marginTop: 10,
     },
 
-    ForgetTitle: {
+    SignTitle: {
         fontSize: 18,
         fontFamily: 'Roboto',
-    },  
-
-    ForgotButton: {
-        marginLeft: 5,
-    },
-
-    ForgotButtonTxt: {
-        color: '#fc4401',
-        fontSize: 18,
-        fontFamily: 'Roboto',
-        fontWeight: 'bold',
     },
 
 });

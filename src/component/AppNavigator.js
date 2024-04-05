@@ -3,10 +3,12 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 
+import CartScreen from '../cart/CartScreen';
 import HomeScreen from '../home/homeScreen';
 import LoginScreen from '../login/loginScreen';
 import LoadingScreen from '../loading/loadingScreen';
 import LoginInputScreen from '../login/loginInputScreen';
+import RegisterScreen from '../register/registerScreen';
 
 // Create a Drawer Navigator
 const Drawer = createDrawerNavigator();
@@ -22,9 +24,10 @@ export const MenuDrawer = () => {
               width: 240,
               height: '90%',
               marginTop: 20,
-              borderTopRightRadius: 20,
-              borderBottomRightRadius: 20,    
+              borderTopLeftRadius: 20,
+              borderBottomLeftRadius: 20,    
             },
+            drawerPosition: 'right',
             drawerActiveTintColor: 'white',
             drawerInactiveTintColor: 'white',
         }}
@@ -52,6 +55,10 @@ export const StackNavigator = () => {
         options={{ headerShown: false }} 
         name="LoginInput" 
         component={LoginInputScreen} />
+      <Stack.Screen
+      options={{ headerShown: false }} 
+      name="RgInput" 
+      component={RegisterScreen} />
     </Stack.Navigator>
   );
 };
@@ -62,6 +69,7 @@ export const AppNavigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+
         <Stack.Screen
           options={{ headerShown: false }} 
           name="MenuDrawer" 
@@ -70,6 +78,15 @@ export const AppNavigator = () => {
           options={{ headerShown: false }} 
           name="LoginInput" 
           component={LoginInputScreen} />
+        <Stack.Screen
+          options={{ headerShown: false }} 
+          name="RgInput" 
+          component={RegisterScreen} />
+        <Stack.Screen 
+          options={{ headerShown: false }}
+          name="Cart"
+          component={CartScreen} />
+          
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -5,7 +5,7 @@ export const homeStylesheet = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: "#fff",
+        backgroundColor: "#F6F7FF",
         alignItems: "center",
         justifyContent: "center",
         marginTop: 20,
@@ -22,22 +22,55 @@ export const homeStylesheet = StyleSheet.create({
 
     category: {
         flexDirection: "row",
-        marginHorizontal: 20,
+        marginRight: 10,
+        marginLeft: 10,
         paddingTop: 20,
         paddingBottom: 10,
         justifyContent: "space-between",
     },
 
+    category_button_gradient: {
+        borderRadius: 10,
+        marginRight: 10,
+        justifyContent: "center",
+        alignItems: "center",
+        width: 130,
+    },
+
     category_button: {
         padding: 10,
         borderRadius: 10,
-        elevation: 2,
-        backgroundColor: 'white',
         marginRight: 10,
-        backgroundColor: "#f7ddad",
         justifyContent: "center",
         alignItems: "center",
     },
+
+    category_button_text: {
+        color: "#fff",
+    },
+
+    // ------------------- preview -------------------------
+
+    preview: {
+        marginBottom: 20,
+    },
+
+    preview_scroll: {
+        flexDirection: "row",
+    },
+
+    preview_items: {
+        flexDirection: "row",
+        marginTop: 20,
+        marginLeft: 10,
+    },
+
+    preview_image: {
+        width: 412,
+        height: 200,
+        borderRadius: 20,
+    },
+
 
     // ------------------- Suggest -------------------------
 
@@ -66,9 +99,10 @@ export const homeStylesheet = StyleSheet.create({
     },
 
     books_item: {
-        backgroundColor: "#f7ddad",
+        backgroundColor: "#FCFCFC",
         borderRadius: 20,
-        padding: 10,
+        padding: 20,
+        borderWidth: 0.55,
     },
 
     book_rating: {
@@ -88,8 +122,8 @@ export const homeStylesheet = StyleSheet.create({
 
     books_thumbnail: {
         marginTop: 10,
-        width: 100,
-        height: 140,
+        width: 120,
+        height: 180,
         borderRadius: 20,
     },
 

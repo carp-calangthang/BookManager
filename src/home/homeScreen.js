@@ -1,5 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState, useEffect } from "react";
+import { LinearGradient } from 'expo-linear-gradient';
 import { Entypo, Feather, Ionicons, Fontisto, AntDesign, FontAwesome, FontAwesome6, MaterialIcons } from '@expo/vector-icons';
 import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity, ScrollView, Image, SafeAreaView } from "react-native";
 
@@ -24,18 +25,75 @@ function HomeScreen() {
                 {/* ------------------- Category suggest ------------------------- */}
 
                 <SafeAreaView style={styles.category}>
+
+                    <LinearGradient
+                    colors={['#fc4401', '#fd1d8b']}
+                    start={{ x: 0, y: 0 }}
+                    end={{ x: 1, y: 0 }}
+                    style={styles.category_button_gradient}
+                    >
+                        <TouchableOpacity style={styles.category_button}>
+                            <FontAwesome name="line-chart" size={24} color="white" />
+                            <Text style={styles.category_button_text}>Bảng xếp hạng</Text>
+                        </TouchableOpacity>
+                    </LinearGradient>
+
+                    <LinearGradient
+                    colors={['#fc4401', '#fd1d8b']}
+                    start={{ x: 0, y: 0 }}
+                    end={{ x: 1, y: 0 }}
+                    style={styles.category_button_gradient}
+                    >
                     <TouchableOpacity style={styles.category_button}>
-                        <FontAwesome name="line-chart" size={24} color="black" />
-                        <Text>Bảng xếp hạng</Text>
+                        <MaterialIcons name="rate-review" size={24} color="white" />
+                        <Text style={styles.category_button_text} >Đánh giá cao</Text>
                     </TouchableOpacity>
+                    </LinearGradient>
+
+                    <LinearGradient
+                    colors={['#fc4401', '#fd1d8b']}
+                    start={{ x: 0, y: 0 }}
+                    end={{ x: 1, y: 0 }}
+                    style={styles.category_button_gradient}
+                    >
                     <TouchableOpacity style={styles.category_button}>
-                        <MaterialIcons name="rate-review" size={24} color="black" />
-                        <Text>Đánh giá cao</Text>
+                        <FontAwesome6 name="magnifying-glass-chart" size={24} color="white" />
+                        <Text style={styles.category_button_text} >Thể loại nổi bật</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.category_button}>
-                        <FontAwesome6 name="magnifying-glass-chart" size={24} color="black" />
-                        <Text>Thể loại nổi bật</Text>
-                    </TouchableOpacity>
+                    </LinearGradient>
+
+                </SafeAreaView>
+
+                {/* ------------------- Hot preview ------------------------- */}
+
+                <SafeAreaView style={styles.preview}>
+                    <ScrollView 
+                        horizontal={true} 
+                        showsHorizontalScrollIndicator={false}
+                        style={styles.preview_scroll}>
+                        <View style={styles.preview_items}>
+                            <TouchableOpacity>
+                                <Image
+                                source={require("../../public/images/dune-cover.jpeg")}
+                                style={styles.preview_image}
+                                >
+                                </Image>
+                                <Text>
+                                </Text>
+                            </TouchableOpacity>                            
+                        </View>
+                        <View style={styles.preview_items}>
+                            <TouchableOpacity>
+                                <Image
+                                source={require("../../public/images/dune-cover.jpeg")}
+                                style={styles.preview_image}
+                                >
+                                </Image>
+                                <Text>
+                                </Text>
+                            </TouchableOpacity>                            
+                        </View>
+                    </ScrollView>
                 </SafeAreaView>
 
                 {/* ------------------- Suggest ------------------------- */}
@@ -60,14 +118,31 @@ function HomeScreen() {
                                         <Text>4.5</Text>
                                     </View>
                                     <View style={styles.description_books}>
-                                        <Text style={styles.book_price}>$14</Text>
-                                        <TouchableOpacity style={styles.buy_button}>
-                                            <AntDesign name="pluscircle" size={24} color="#faa200" />
-                                        </TouchableOpacity>                                
+                                        <Text style={styles.book_price}>$14</Text>                              
                                     </View>                        
                                 </View>
                             </View>                
                         </View>
+
+                        <View style={styles.books_scroll_items}>
+                            <View style={styles.books_item}>
+                                <Image 
+                                    source={require("../../public/images/dune.jpeg")}
+                                    style={styles.books_thumbnail}
+                                />
+                                <View style={styles.books_infomation}>
+                                    <Text style={styles.book_title}>Dune</Text>
+                                    <View style={styles.book_rating}>
+                                        <AntDesign style={styles.rating_count} name="star" size={18} color="#fcc00d" />
+                                        <Text>4.5</Text>
+                                    </View>
+                                    <View style={styles.description_books}>
+                                        <Text style={styles.book_price}>$14</Text>                             
+                                    </View>                        
+                                </View>
+                            </View>                
+                        </View>
+
                     </ScrollView>
                 </SafeAreaView>
 
@@ -93,10 +168,7 @@ function HomeScreen() {
                                         <Text>4.5</Text>
                                     </View>
                                     <View style={styles.description_books}>
-                                        <Text style={styles.book_price}>$14</Text>
-                                        <TouchableOpacity style={styles.buy_button}>
-                                            <AntDesign name="pluscircle" size={24} color="#faa200" />
-                                        </TouchableOpacity>                                
+                                        <Text style={styles.book_price}>$14</Text>                               
                                     </View>                        
                                 </View>
                             </View>                
@@ -125,10 +197,7 @@ function HomeScreen() {
                                         <Text>4.5</Text>
                                     </View>
                                     <View style={styles.description_books}>
-                                        <Text style={styles.book_price}>$14</Text>
-                                        <TouchableOpacity style={styles.buy_button}>
-                                            <AntDesign name="pluscircle" size={24} color="#faa200" />
-                                        </TouchableOpacity>                                
+                                        <Text style={styles.book_price}>$14</Text>                             
                                     </View>                        
                                 </View>
                             </View>                

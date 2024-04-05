@@ -19,40 +19,46 @@ function LoginScreen() {
                 />
                 <Text style={styles.LoginTitle} >Login to your account</Text>
 
-                <LinearGradient
-                    // Button Linear Gradient
-                    colors={['#fc4401', '#fd1d8b']}
-                    start={{ x: 0, y: 0 }}
-                    end={{ x: 1, y: 0 }}
-                    style={styles.LoginButton}>
-                    <TouchableOpacity
-                        onPress={() => {
-                            navigation.navigate('LoginInput');
-                        }}>
-                        <Text style={styles.LoginButtonTxt}>SIGN IN</Text>
-                    </TouchableOpacity>
-                </LinearGradient>
+                <TouchableOpacity
+                    onPress={() => {
+                        navigation.navigate('LoginInput');
+                    }}>
+                    <LinearGradient
+                        // Button Linear Gradient
+                        colors={['#fc4401', '#fd1d8b']}
+                        start={{ x: 0, y: 0 }}
+                        end={{ x: 1, y: 0 }}
+                        style={styles.LoginButton}>
+                        
+                            <Text style={styles.LoginButtonTxt}>SIGN IN</Text>
+                        
+                    </LinearGradient>
+                </TouchableOpacity>
 
-                <LinearGradient
-                    // Button Linear Gradient
-                    colors={['#eb4a3d', '#fabf1d']}
-                    start={{ x: 0, y: 0 }}
-                    end={{ x: 1, y: 0 }}
-                    style={styles.GoogleLogin}>
-                    <TouchableOpacity
-                        style={styles.GoogleLoginBtn}
+                <TouchableOpacity
                         onPress={() => {
                             console.log('Login button pressed');
                         }}
-                    >
+                >
+                    <LinearGradient
+                        // Button Linear Gradient
+                        colors={['#eb4a3d', '#fabf1d']}
+                        start={{ x: 0, y: 0 }}
+                        end={{ x: 1, y: 0 }}
+                        style={styles.GoogleLogin}
+                    >                        
                         <AntDesign name="google" size={24} color="white" />
                         <Text style={styles.GoogleLoginTxt}>Continute with Google</Text>
-                    </TouchableOpacity>
-                </LinearGradient>
+                    </LinearGradient>
+                </TouchableOpacity>
 
                 <View style={styles.Reg}>
                     <Text style={styles.RegTitle}>Don't have an account?</Text>
-                    <TouchableOpacity style={styles.CreateButton} >
+                    <TouchableOpacity 
+                        onPress={() => {
+                            navigation.navigate('RgInput');
+                        }}
+                        style={styles.CreateButton} >
                         <Text style={styles.CreateButtonTxt}>Create</Text>
                     </TouchableOpacity>
                 </View>                

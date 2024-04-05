@@ -1,5 +1,5 @@
 import React from "react";
-import { Entypo} from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { View, TouchableOpacity, Image } from "react-native";
 
@@ -10,15 +10,14 @@ export default function Header () {
         const navigation = useNavigation();
         return (
         <View style={headerStyle.header}>
+            
             <TouchableOpacity
-                onPress={() => navigation.openDrawer()}
+                onPress={() => navigation.navigate('Cart')}
             >
-                <Entypo name="menu" size={50} color="black" />
+                <AntDesign name="shoppingcart" size={32} color="black" />
             </TouchableOpacity>
             <TouchableOpacity
-                onPress={() => {
-                    console.log('Image button pressed');
-                }}
+                onPress={() => navigation.openDrawer()}
             >
                 <Image 
                     style={headerStyle.image} 
